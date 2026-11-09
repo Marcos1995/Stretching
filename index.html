@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stretching · Cintilla iliotibial y estiramientos</title>
+<meta name="description" content="Dos rutinas en casa: fuerza de cadera para la cintilla iliotibial y estiramientos diarios de corredor.">
+<style>
+:root {
+  --bg: #f2f5f7; --card: #fff; --ink: #12263f; --muted: #5a6b80; --line: #e3e8ee;
+  --fuerza: #0b7f8d; --estira: #3d55c4;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0f1722; --card: #182333; --ink: #eaf0f6; --muted: #9db0c5; --line: #2a3a4f; --fuerza: #35b8c7; --estira: #8c9cf2; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 1080px; margin: 0 auto; padding: 20px 14px 40px; }
+h1 { font-size: 1.9rem; margin: 0 0 4px; letter-spacing: -.02em; }
+.lead { margin: 0 0 16px; color: var(--muted); }
+.plan { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+.plan a { display: block; padding: 12px 14px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); color: inherit; text-decoration: none; border-left: 6px solid var(--c); }
+.plan b { display: block; font-size: 1.05rem; }
+.plan span { color: var(--muted); font-size: .9rem; }
+.fichas { display: grid; gap: 18px; align-items: start; }
+@media (min-width: 900px) { .fichas { grid-template-columns: 1fr 1fr; } }
+.ficha { background: var(--card); border-radius: 18px; overflow: hidden; border: 1px solid var(--line); }
+.ficha header { background: var(--c); color: #fff; padding: 14px 16px 12px; }
+@media (prefers-color-scheme: dark) { .ficha header { color: #0f1722; } }
+.ficha .tag { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; opacity: .9; }
+.ficha h2 { margin: 0 0 8px; font-size: 1.5rem; letter-spacing: -.01em; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips span { background: rgba(255,255,255,.22); border-radius: 99px; padding: 3px 10px; font-size: .85rem; font-weight: 600; }
+.tip { margin: 0; padding: 9px 16px; font-size: .88rem; color: var(--muted); border-bottom: 1px solid var(--line); }
+.ex { display: flex; align-items: center; gap: 12px; width: 100%; padding: 10px 12px; background: none; border: 0; border-bottom: 1px solid var(--line); color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.ex img { width: 42%; max-width: 210px; height: auto; aspect-ratio: 4/3; border-radius: 12px; background: #fff; flex: none; display: block; }
+.ex > span { min-width: 0; }
+.ex .nm { display: block; font-size: 1.02rem; line-height: 1.2; }
+.ex .nm i { font-style: normal; color: var(--c); margin-right: 4px; }
+.dose { display: block; font-size: 1.6rem; font-weight: 800; color: var(--c); line-height: 1.15; margin: 2px 0; }
+.dose small { font-size: .85rem; font-weight: 700; white-space: nowrap; }
+.cue { display: block; font-size: .86rem; color: var(--muted); line-height: 1.3; }
+.ex.done { background: color-mix(in srgb, var(--c) 12%, transparent); }
+.ex.done .nm::after { content: " ✓"; color: var(--c); }
+.foot { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 16px; flex-wrap: wrap; }
+.week { display: flex; gap: 5px; align-items: center; font-size: .8rem; color: var(--muted); }
+.week b { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; border: 2px solid var(--line); font-size: .75rem; }
+.week b.hoy { border-color: var(--c); color: var(--c); }
+.week b.ok { background: var(--c); border-color: var(--c); color: var(--card); }
+.foot a { color: var(--c); font-weight: 700; font-size: .9rem; text-decoration: none; }
+.reglas { margin-top: 18px; padding: 14px 16px; background: var(--card); border: 1px solid var(--line); border-radius: 18px; }
+.reglas h2 { margin: 0 0 6px; font-size: 1.1rem; }
+.reglas ul { margin: 0; padding-left: 20px; }
+.reglas li { margin: 4px 0; }
+.reglas p { margin: 10px 0 0; font-size: .82rem; color: var(--muted); }
+/* Modo ficha (?ficha=fuerza|estira): solo la tarjeta, para exportar la imagen */
+body.solo { background: var(--card); }
+.solo main { padding: 0; }
+.solo main > :not(.fichas), .solo .ficha:not(.sel), .solo .foot { display: none; }
+.solo .ficha { border: 0; border-radius: 0; }
+.solo .ex:last-of-type { border-bottom: 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Stretching</h1>
+  <p class="lead">Cintilla iliotibial (pierna derecha) y estiramientos de corredor. Dos rutinas, 10 ejercicios, en casa.</p>
+  <nav class="plan">
+    <a href="#fuerza" style="--c:var(--fuerza)"><b>Fuerza</b><span>3–4 días por semana, alternos</span></a>
+    <a href="#estira" style="--c:var(--estira)"><b>Estiramientos</b><span>Todos los días</span></a>
+  </nav>
+  <div class="fichas" id="fichas"></div>
+  <section class="reglas">
+    <h2>Reglas</h2>
+    <ul>
+      <li>Molestia hasta 3 sobre 10: sigue. Dolor punzante en la cara externa de la rodilla: para.</li>
+      <li>Corre solo si no duele. Mientras duela, evita las cuestas abajo.</li>
+      <li>Cuando todas las series salgan fáciles: banda más dura o 5 repeticiones más.</li>
+      <li>Toca cada ejercicio al terminarlo; el día se marca cuando completas la rutina.</li>
+    </ul>
+    <p>Guía general, no sustituye a un fisioterapeuta. Si en 4–6 semanas no mejora, consulta.</p>
+  </section>
+</main>
+<script>
+const RUTINAS = [
+  { id: 'fuerza', tag: 'Cintilla iliotibial', title: 'Fuerza de cadera',
+    chips: ['3–4 días/semana', '≈ 18 min', 'Banda + esterilla'],
+    tip: 'Los dos lados, empieza por la derecha · 30 s de descanso entre series',
+    ex: [
+      ['abduccion-lateral', 'Abducción lateral tumbado', '3 × 15', 'por lado', 'Pierna de arriba recta y un poco hacia atrás. Sube 2 s, baja 2 s, sin girar la cadera.'],
+      ['pasos-laterales', 'Pasos laterales con banda', '3 × 10 pasos', 'por lado', 'Banda sobre las rodillas, media sentadilla. Rodillas hacia fuera, sin juntar los pies.'],
+      ['puente-una-pierna', 'Puente a una pierna', '3 × 10', 'por lado', 'Sube apretando el glúteo, cadera nivelada. Aguanta 2 s arriba.'],
+      ['plancha-lateral', 'Plancha lateral', '3 × 30 s', 'por lado', 'Cuerpo en línea recta, cadera alta. Si cuesta, apoya las rodillas.'],
+    ] },
+  { id: 'estira', tag: 'Corredor', title: 'Estiramientos diarios',
+    chips: ['Todos los días', '≈ 12 min', 'Foam roller + esterilla'],
+    tip: 'Después de correr o por la noche · sin rebotes · tensión suave, sin dolor',
+    ex: [
+      ['foam-roller', 'Foam roller: muslo lateral', '1 min', 'por lado', 'Rueda lento desde la cadera hasta antes de la rodilla. Nunca sobre la rodilla.'],
+      ['estiramiento-cintilla', 'Cintilla de pie', '2 × 30 s', 'por lado', 'Cruza una pierna por detrás, brazo de ese lado arriba e inclínate al lado contrario sacando la cadera.'],
+      ['figura-4', 'Glúteo (figura 4)', '2 × 30 s', 'por lado', 'Tobillo sobre la rodilla contraria. Lleva la rodilla hacia el pecho.'],
+      ['flexor-cadera', 'Flexor de cadera', '2 × 30 s', 'por lado', 'Aprieta el glúteo de la pierna de atrás y lleva la cadera al frente. Tronco recto.'],
+      ['isquiotibiales', 'Isquiotibiales', '2 × 30 s', 'por lado', 'Sube la pierna recta sujetando el muslo. La otra, pegada al suelo.'],
+      ['perro', 'Gemelos: perro boca abajo', '2 × 30 s', '', 'Cadera arriba, espalda recta. Empuja los talones hacia el suelo.'],
+    ] },
+];
+
+const KEY = 'stretching:v1';
+const dia = d => d.toLocaleDateString('sv');
+const hoy = dia(new Date());
+let log = {};
+try { log = JSON.parse(localStorage.getItem(KEY)) || {}; } catch {}
+const hechos = d => log[d] || [];
+const completa = (r, d) => r.ex.every(e => hechos(d).includes(e[0]));
+
+function semana(r) {
+  const lunes = new Date();
+  lunes.setDate(lunes.getDate() - (lunes.getDay() + 6) % 7);
+  return [...'LMXJVSD'].map((l, i) => {
+    const d = new Date(lunes); d.setDate(lunes.getDate() + i);
+    const k = dia(d);
+    return `<b class="${completa(r, k) ? 'ok' : ''} ${k === hoy ? 'hoy' : ''}">${l}</b>`;
+  }).join('');
+}
+
+function pinta() {
+  document.getElementById('fichas').innerHTML = RUTINAS.map(r => `
+    <section class="ficha" id="${r.id}" style="--c:var(--${r.id})">
+      <header>
+        <div class="tag">${r.tag}</div>
+        <h2>${r.title}</h2>
+        <div class="chips">${r.chips.map(c => `<span>${c}</span>`).join('')}</div>
+      </header>
+      <p class="tip">${r.tip}</p>
+      ${r.ex.map((e, i) => `
+      <button class="ex ${hechos(hoy).includes(e[0]) ? 'done' : ''}" data-id="${e[0]}">
+        <img src="img/${e[0]}.jpg" alt="${e[1]}" width="800" height="600">
+        <span>
+          <b class="nm"><i>${i + 1}.</i>${e[1]}</b>
+          <span class="dose">${e[2]} <small>${e[3]}</small></span>
+          <span class="cue">${e[4]}</span>
+        </span>
+      </button>`).join('')}
+      <div class="foot">
+        <div class="week">${semana(r)}</div>
+        <a href="resumen-${r.id}.png" download>Guardar imagen</a>
+      </div>
+    </section>`).join('');
+}
+
+const ficha = new URLSearchParams(location.search).get('ficha');
+pinta();
+if (ficha) {
+  document.body.classList.add('solo');
+  document.getElementById(ficha)?.classList.add('sel');
+  document.querySelectorAll('.done').forEach(b => b.classList.remove('done'));
+} else {
+  document.getElementById('fichas').addEventListener('click', ev => {
+    const b = ev.target.closest('.ex');
+    if (!b) return;
+    const set = new Set(hechos(hoy));
+    set.has(b.dataset.id) ? set.delete(b.dataset.id) : set.add(b.dataset.id);
+    log[hoy] = [...set];
+    localStorage.setItem(KEY, JSON.stringify(log));
+    pinta();
+  });
+}
+</script>
+</body>
+</html>

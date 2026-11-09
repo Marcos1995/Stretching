@@ -1,0 +1,164 @@
+{
+  ".cursor/agents/explorar.md": {
+    "mtime": 1794265467.2761247,
+    "seen": 1794265504.2870543,
+    "ast_hash": "6e208cfe0f5f10ed1c52eca68a3e5a5f",
+    "semantic_hash": ""
+  },
+  ".cursor/agents/implementar.md": {
+    "mtime": 1794265467.2761247,
+    "seen": 1794265504.2870543,
+    "ast_hash": "6e3d9911e1261b8a72f5b380803cc22d",
+    "semantic_hash": ""
+  },
+  ".cursor/skills/debug/SKILL.md": {
+    "mtime": 1794265467.2761247,
+    "seen": 1794265504.2870543,
+    "ast_hash": "31fbb3729bb6c43bb61f8ab136ad9854",
+    "semantic_hash": ""
+  },
+  ".cursor/skills/jev/SKILL.md": {
+    "mtime": 1794265467.2751253,
+    "seen": 1794265504.2870543,
+    "ast_hash": "c3316b3a3660cc86f81c89e6e583c440",
+    "semantic_hash": ""
+  },
+  ".cursor/skills/laya/SKILL.md": {
+    "mtime": 1794265467.2751253,
+    "seen": 1794265504.2870543,
+    "ast_hash": "1bc4782d5ba49d165ab91392a9a917b7",
+    "semantic_hash": ""
+  },
+  ".cursor/skills/review/SKILL.md": {
+    "mtime": 1794265467.274125,
+    "seen": 1794265504.2870543,
+    "ast_hash": "d8fa8d4e21e3307fdd7d92d161d38bce",
+    "semantic_hash": ""
+  },
+  ".cursor/skills/tablas/SKILL.md": {
+    "mtime": 1794265467.2761247,
+    "seen": 1794265504.2870543,
+    "ast_hash": "0213fecac7b24fa349260bd3416068c8",
+    "semantic_hash": ""
+  },
+  ".cursor/skills/verify/SKILL.md": {
+    "mtime": 1794265467.2761247,
+    "seen": 1794265504.2870543,
+    "ast_hash": "3ebb042e1baf3773e53ac9a5a0c77574",
+    "semantic_hash": ""
+  },
+  ".cursor/skills/web-design/SKILL.md": {
+    "mtime": 1794265467.2761247,
+    "seen": 1794265504.2870543,
+    "ast_hash": "d2802f0036d1d4d8ac69cbab6ac1e6e4",
+    "semantic_hash": ""
+  },
+  ".cursor/skills/web-design/dashboard.md": {
+    "mtime": 1794265467.2761247,
+    "seen": 1794265504.2870543,
+    "ast_hash": "9018e55f141fc57e29363fa030dcf904",
+    "semantic_hash": ""
+  },
+  "AGENTS.md": {
+    "mtime": 1794265467.2761247,
+    "seen": 1794265504.2870543,
+    "ast_hash": "799e0fc97841b18f1bab39ae083c4726",
+    "semantic_hash": ""
+  },
+  "PROJECT.md": {
+    "mtime": 1794265484.037647,
+    "seen": 1794265504.2870543,
+    "ast_hash": "3ad4b3e63085b28801697d603edaa885",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1794265455.053581,
+    "seen": 1794265504.2870543,
+    "ast_hash": "0675a6b6e6ab82325b4ff20c1484b66b",
+    "semantic_hash": ""
+  },
+  "START.md": {
+    "mtime": 1794265467.2761247,
+    "seen": 1794265504.2870543,
+    "ast_hash": "bcfe3a344eb2f495e821cd3dae85d0cc",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1794265438.5261316,
+    "seen": 1794265504.2870543,
+    "ast_hash": "f41743d0ba742129dd7d58b992882e50",
+    "semantic_hash": ""
+  },
+  "img/abduccion-lateral.jpg": {
+    "mtime": 1794265291.839293,
+    "seen": 1794265504.2870543,
+    "ast_hash": "d93c8f3fe7e9e5d7661dd32ec4518dd5",
+    "semantic_hash": ""
+  },
+  "img/estiramiento-cintilla.jpg": {
+    "mtime": 1794265291.9486523,
+    "seen": 1794265504.2870543,
+    "ast_hash": "9ce4af09e58b5cf029d2f05090ef41b4",
+    "semantic_hash": ""
+  },
+  "img/figura-4.jpg": {
+    "mtime": 1794265291.9661832,
+    "seen": 1794265504.2870543,
+    "ast_hash": "48bc70b16530ea61d9c2911dbdbaed9f",
+    "semantic_hash": ""
+  },
+  "img/flexor-cadera.jpg": {
+    "mtime": 1794265291.9855227,
+    "seen": 1794265504.2870543,
+    "ast_hash": "c35929fc2ed6620fca833b1c47ed4b83",
+    "semantic_hash": ""
+  },
+  "img/foam-roller.jpg": {
+    "mtime": 1794265291.9233596,
+    "seen": 1794265504.2870543,
+    "ast_hash": "739cf74426e9366ca319c84424cf0ec7",
+    "semantic_hash": ""
+  },
+  "img/isquiotibiales.jpg": {
+    "mtime": 1794265292.0042772,
+    "seen": 1794265504.2870543,
+    "ast_hash": "b659b3c2728810b9a9b9235857f7c9e3",
+    "semantic_hash": ""
+  },
+  "img/pasos-laterales.jpg": {
+    "mtime": 1794265291.8646421,
+    "seen": 1794265504.2870543,
+    "ast_hash": "bb80dd83db536f4030738fba55657c33",
+    "semantic_hash": ""
+  },
+  "img/perro.jpg": {
+    "mtime": 1794265292.0263703,
+    "seen": 1794265504.2870543,
+    "ast_hash": "f9819f625ee5a49c19f22f7d1be92d17",
+    "semantic_hash": ""
+  },
+  "img/plancha-lateral.jpg": {
+    "mtime": 1794265291.9034438,
+    "seen": 1794265504.2870543,
+    "ast_hash": "e392c9e039a46d0900c015cac3f7e058",
+    "semantic_hash": ""
+  },
+  "img/puente-una-pierna.jpg": {
+    "mtime": 1794265291.8826606,
+    "seen": 1794265504.2870543,
+    "ast_hash": "b4bbbb32f3be9e7bc3c7e3da3393342d",
+    "semantic_hash": ""
+  },
+  "resumen-estira.png": {
+    "mtime": 1794265458.4201703,
+    "seen": 1794265504.2870543,
+    "ast_hash": "a4278ea74ca05655f738b73137043a93",
+    "semantic_hash": ""
+  },
+  "resumen-fuerza.png": {
+    "mtime": 1794265457.053565,
+    "seen": 1794265504.2870543,
+    "ast_hash": "a164261f47ce61e46636e055f21fce92",
+    "semantic_hash": ""
+  }
+}
