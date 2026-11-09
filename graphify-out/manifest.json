@@ -84,9 +84,9 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1794265438.5261316,
-    "seen": 1794265504.2870543,
-    "ast_hash": "f41743d0ba742129dd7d58b992882e50",
+    "mtime": 1794265882.378745,
+    "seen": 1794265890.0549874,
+    "ast_hash": "d6ce075894d0cc5e0179cea53ee95963",
     "semantic_hash": ""
   },
   "img/abduccion-lateral.jpg": {
@@ -150,15 +150,15 @@
     "semantic_hash": ""
   },
   "resumen-estira.png": {
-    "mtime": 1794265458.4201703,
-    "seen": 1794265504.2870543,
-    "ast_hash": "a4278ea74ca05655f738b73137043a93",
+    "mtime": 1794265865.2142565,
+    "seen": 1794265890.0549874,
+    "ast_hash": "836318755345f6c733f4e57105bf9d9e",
     "semantic_hash": ""
   },
   "resumen-fuerza.png": {
-    "mtime": 1794265457.053565,
-    "seen": 1794265504.2870543,
-    "ast_hash": "a164261f47ce61e46636e055f21fce92",
+    "mtime": 1794265863.5856335,
+    "seen": 1794265890.0549874,
+    "ast_hash": "7f3dfd72394b8c11c58b86ca9ea16511",
     "semantic_hash": ""
   }
 }
