@@ -16,10 +16,11 @@
 
 ## Comandos utiles
 - Dev: `start index.html`
-- Fichas: abrir `index.html?ficha=fuerza` o `?ficha=estira` en Chrome headless (`--window-size=540,1500 --force-device-scale-factor=2 --screenshot`) y recortar el blanco de abajo.
+- Fichas: `powershell -File fichas.ps1` (Chrome headless sobre `index.html?ficha=fuerza|estira`, recorta el blanco de abajo).
 
 ## Notas para el agente
 - Los ejercicios viven en el array `RUTINAS` de `index.html`; el nombre de la imagen es el id.
-- Si cambia un ejercicio o una dosis, regenera las dos fichas PNG.
+- Flecha naranja = movimiento: sexto elemento del ejercicio, un path SVG sobre 800×600. Sin flecha = postura mantenida.
+- Si cambia un ejercicio, una dosis o una flecha, regenera las dos fichas PNG.
 - Ilustraciones en `img/` (800×600, fondo blanco, mismo personaje).
 - Lean kit (ver AGENTS.md)

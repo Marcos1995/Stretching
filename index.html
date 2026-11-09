@@ -33,7 +33,10 @@ h1 { font-size: 1.9rem; margin: 0 0 4px; letter-spacing: -.02em; }
 .chips span { background: rgba(255,255,255,.22); border-radius: 99px; padding: 3px 10px; font-size: .85rem; font-weight: 600; }
 .tip { margin: 0; padding: 9px 16px; font-size: .88rem; color: var(--muted); border-bottom: 1px solid var(--line); }
 .ex { display: flex; align-items: center; gap: 12px; width: 100%; padding: 10px 12px; background: none; border: 0; border-bottom: 1px solid var(--line); color: inherit; font: inherit; text-align: left; cursor: pointer; }
-.ex img { width: 42%; max-width: 210px; height: auto; aspect-ratio: 4/3; border-radius: 12px; background: #fff; flex: none; display: block; }
+.pic { position: relative; width: 42%; max-width: 210px; flex: none; }
+.pic img { width: 100%; height: auto; aspect-ratio: 4/3; border-radius: 12px; background: #fff; display: block; }
+.pic svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.pic path { fill: none; stroke: #f26a1b; stroke-width: 16; marker-start: url(#fl); marker-end: url(#fl); }
 .ex > span { min-width: 0; }
 .ex .nm { display: block; font-size: 1.02rem; line-height: 1.2; }
 .ex .nm i { font-style: normal; color: var(--c); margin-right: 4px; }
@@ -62,6 +65,7 @@ body.solo { background: var(--card); }
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><marker id="fl" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#f26a1b"/></marker></svg>
 <main>
   <h1>Stretching</h1>
   <p class="lead">Cintilla iliotibial (pierna derecha) y estiramientos de corredor. Dos rutinas, 10 ejercicios, en casa.</p>
@@ -82,21 +86,22 @@ body.solo { background: var(--card); }
   </section>
 </main>
 <script>
+// Ejercicio: [imagen, nombre, dosis, unidad, indicación, flecha de movimiento (path sobre 800×600; sin ella = postura mantenida)]
 const RUTINAS = [
   { id: 'fuerza', tag: 'Cintilla iliotibial', title: 'Fuerza de cadera',
     chips: ['3–4 días/semana', '≈ 18 min', 'Banda + esterilla'],
     tip: 'Ejercicio a ejercicio, no en circuito: haz las 3 series y pasa al siguiente · 1 serie = derecha + izquierda · 30&nbsp;s de descanso entre series',
     ex: [
-      ['abduccion-lateral', 'Abducción lateral tumbado', '3 × 15', 'por lado', 'Pierna de arriba recta y un poco hacia atrás. Sube 2 s, baja 2 s, sin girar la cadera.'],
-      ['pasos-laterales', 'Pasos laterales con banda', '3 × 10 pasos', 'por lado', 'Banda sobre las rodillas, media sentadilla. Rodillas hacia fuera, sin juntar los pies.'],
-      ['puente-una-pierna', 'Puente a una pierna', '3 × 10', 'por lado', 'Sube apretando el glúteo, cadera nivelada. Aguanta 2 s arriba.'],
+      ['abduccion-lateral', 'Abducción lateral tumbado', '3 × 15', 'por lado', 'Pierna de arriba recta y un poco hacia atrás. Sube 2 s, baja 2 s, sin girar la cadera.', 'M674 170A289 289 0 0 1 727 336'],
+      ['pasos-laterales', 'Pasos laterales con banda', '3 × 10 pasos', 'por lado', 'Banda sobre las rodillas, media sentadilla. Rodillas hacia fuera, sin juntar los pies.', 'M270 572H520'],
+      ['puente-una-pierna', 'Puente a una pierna', '3 × 10', 'por lado', 'Sube apretando el glúteo, cadera nivelada. Aguanta 2 s arriba.', 'M422 148V242'],
       ['plancha-lateral', 'Plancha lateral', '3 × 30 s', 'por lado', 'Cuerpo en línea recta, cadera alta. Si cuesta, apoya las rodillas.'],
     ] },
   { id: 'estira', tag: 'Corredor', title: 'Estiramientos diarios',
     chips: ['Todos los días', '≈ 12 min', 'Foam roller + esterilla'],
     tip: 'Ejercicio a ejercicio, no en circuito: derecha, izquierda, repite y pasa al siguiente · después de correr o por la noche · sin rebotes ni dolor',
     ex: [
-      ['foam-roller', 'Foam roller: muslo lateral', '1 min', 'por lado', 'Rueda lento desde la cadera hasta antes de la rodilla. Nunca sobre la rodilla.'],
+      ['foam-roller', 'Foam roller: muslo lateral', '1 min', 'por lado', 'Rueda lento desde la cadera hasta antes de la rodilla. Nunca sobre la rodilla.', 'M344 508H508'],
       ['estiramiento-cintilla', 'Cintilla de pie', '2 × 30 s', 'por lado', 'Cruza una pierna por detrás, brazo de ese lado arriba e inclínate al lado contrario sacando la cadera.'],
       ['figura-4', 'Glúteo (figura 4)', '2 × 30 s', 'por lado', 'Tobillo sobre la rodilla contraria. Lleva la rodilla hacia el pecho.'],
       ['flexor-cadera', 'Flexor de cadera', '2 × 30 s', 'por lado', 'Aprieta el glúteo de la pierna de atrás y lleva la cadera al frente. Tronco recto.'],
@@ -134,7 +139,7 @@ function pinta() {
       <p class="tip">${r.tip}</p>
       ${r.ex.map((e, i) => `
       <button class="ex ${hechos(hoy).includes(e[0]) ? 'done' : ''}" data-id="${e[0]}">
-        <img src="img/${e[0]}.jpg" alt="${e[1]}" width="800" height="600">
+        <span class="pic"><img src="img/${e[0]}.jpg" alt="${e[1]}" width="800" height="600">${e[5] ? `<svg viewBox="0 0 800 600" aria-hidden="true"><path d="${e[5]}"/></svg>` : ''}</span>
         <span>
           <b class="nm"><i>${i + 1}.</i>${e[1]}</b>
           <span class="dose">${e[2]} <small>${e[3]}</small></span>
