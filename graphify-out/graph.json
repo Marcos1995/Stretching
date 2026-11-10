@@ -262,6 +262,30 @@
       "source_location": "L1"
     },
     {
+      "id": "docs_decisiones",
+      "label": "DECISIONES.md",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "DECISIONES.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "decisiones.md",
+      "source_file": "docs/DECISIONES.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_decisiones_decisiones",
+      "label": "Decisiones",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "DECISIONES.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "decisiones",
+      "source_file": "docs/DECISIONES.md",
+      "source_location": "L1"
+    },
+    {
       "id": "project",
       "label": "PROJECT.md",
       "_origin": "ast",
@@ -283,7 +307,7 @@
       "node_kind": "heading",
       "norm_label": "comandos utiles",
       "source_file": "PROJECT.md",
-      "source_location": "L17"
+      "source_location": "L18"
     },
     {
       "id": "project_contexto_del_proyecto",
@@ -319,7 +343,7 @@
       "node_kind": "heading",
       "norm_label": "notas para el agente",
       "source_file": "PROJECT.md",
-      "source_location": "L21"
+      "source_location": "L22"
     },
     {
       "id": "project_produccion",
@@ -343,7 +367,7 @@
       "node_kind": "heading",
       "norm_label": "stack",
       "source_file": "PROJECT.md",
-      "source_location": "L14"
+      "source_location": "L15"
     },
     {
       "id": "cursor_skills_web_design_dashboard",
@@ -1091,6 +1115,17 @@
       "weight": 1.0
     },
     {
+      "source": "docs_decisiones",
+      "target": "docs_decisiones_decisiones",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/DECISIONES.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
       "source": "project",
       "target": "project_contexto_del_proyecto",
       "relation": "contains",
@@ -1109,7 +1144,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "PROJECT.md",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -1120,7 +1155,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "PROJECT.md",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -1131,7 +1166,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "PROJECT.md",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -1169,5 +1204,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "c87a700583f9b25e7afe8139737dce4e35ef2e1c"
+  "built_at_commit": "f600298fc973dce0380228423aeac3cbdf94443d"
 }

@@ -3,21 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Stretching · Cintilla iliotibial y estiramientos</title>
-<meta name="description" content="Dos rutinas en casa: fuerza de cadera para la cintilla iliotibial y estiramientos diarios de corredor.">
+<title>Stretching · Plan semanal de corredor</title>
+<meta name="description" content="Plan semanal en casa: cadera para la cintilla iliotibial, fuerza, movilidad de cuello y espalda, estiramientos y carrera.">
 <style>
 :root {
   --bg: #f2f5f7; --card: #fff; --ink: #12263f; --muted: #5a6b80; --line: #e3e8ee;
-  --fuerza: #0b7f8d; --estira: #3d55c4;
+  --cadera: #0b7f8d; --fuerza: #b4432e; --movilidad: #2e7d4f; --estira: #3d55c4; --correr: #8a5a00;
 }
 @media (prefers-color-scheme: dark) {
-  :root { --bg: #0f1722; --card: #182333; --ink: #eaf0f6; --muted: #9db0c5; --line: #2a3a4f; --fuerza: #35b8c7; --estira: #8c9cf2; }
+  :root { --bg: #0f1722; --card: #182333; --ink: #eaf0f6; --muted: #9db0c5; --line: #2a3a4f; --cadera: #35b8c7; --fuerza: #f08a75; --movilidad: #6fcf97; --estira: #8c9cf2; --correr: #e0b060; }
 }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
 main { max-width: 1080px; margin: 0 auto; padding: 20px 14px 40px; }
 h1 { font-size: 1.9rem; margin: 0 0 4px; letter-spacing: -.02em; }
 .lead { margin: 0 0 16px; color: var(--muted); }
+.dias { display: grid; gap: 6px; margin-bottom: 10px; }
+.dias a { display: flex; gap: 10px; align-items: baseline; padding: 8px 12px; border-radius: 12px; background: var(--card); border: 1px solid var(--line); border-left: 6px solid var(--c); color: inherit; text-decoration: none; }
+.dias i { font-style: normal; font-weight: 800; color: var(--c); min-width: 2.2em; }
+.dias a.hoy { border-color: var(--c); box-shadow: inset 0 0 0 1px var(--c); font-weight: 700; }
+.dias a.ok::after { content: "✓"; margin-left: auto; color: var(--c); font-weight: 800; }
+@media (min-width: 900px) { .dias { grid-template-columns: repeat(7, 1fr); } .dias a { flex-direction: column; gap: 2px; } }
 .plan { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
 .plan a { display: block; padding: 12px 14px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); color: inherit; text-decoration: none; border-left: 6px solid var(--c); }
 .plan b { display: block; font-size: 1.05rem; }
@@ -68,10 +74,11 @@ body.solo { background: var(--card); }
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><marker id="fl" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#f26a1b"/></marker></svg>
 <main>
   <h1>Stretching</h1>
-  <p class="lead">Cintilla iliotibial (pierna derecha) y estiramientos de corredor. Dos rutinas, 10 ejercicios, en casa.</p>
+  <p class="lead">Plan semanal: cadera para la cintilla iliotibial (pierna derecha), fuerza, movilidad de cuello y espalda, estiramientos y carrera. En casa, con banda y esterilla.</p>
+  <nav class="dias" id="dias"></nav>
   <nav class="plan">
-    <a href="#fuerza" style="--c:var(--fuerza)"><b>Fuerza</b><span>3–4 días por semana, alternos</span></a>
-    <a href="#estira" style="--c:var(--estira)"><b>Estiramientos</b><span>Todos los días</span></a>
+    <a href="#movilidad" style="--c:var(--movilidad)"><b>Movilidad</b><span>Todos los días · 8 min</span></a>
+    <a href="#estira" style="--c:var(--estira)"><b>Estiramientos</b><span>Todos los días · 12 min</span></a>
   </nav>
   <div class="fichas" id="fichas"></div>
   <section class="reglas">
@@ -79,23 +86,49 @@ body.solo { background: var(--card); }
     <ul>
       <li>Molestia hasta 3 sobre 10: sigue. Dolor punzante en la cara externa de la rodilla: para.</li>
       <li>Corre solo si no duele. Mientras duela, evita las cuestas abajo.</li>
+      <li>Estirar es tirón suave, nunca dolor. No fuerces la zona de la rotura antigua del isquiotibial.</li>
+      <li>Cuello clavado o un hombro subido: ese día sin flexiones ni planchas; calor y movilidad suave.</li>
       <li>Cuando todas las series salgan fáciles: banda más dura o 5 repeticiones más.</li>
+      <li>Día sin tiempo: solo movilidad y estiramientos. Un día saltado no se recupera; sigue con el de hoy.</li>
       <li>Toca cada ejercicio al terminarlo; el día se marca cuando completas la rutina.</li>
     </ul>
-    <p>Guía general, no sustituye a un fisioterapeuta. Si en 4–6 semanas no mejora, consulta.</p>
+    <p>Guía general, no sustituye a un fisioterapeuta. Si en 4–6 semanas no mejora, o el cuello da hormigueo o dolor que baja por el brazo, consulta.</p>
   </section>
 </main>
 <script>
 // Ejercicio: [imagen, nombre, dosis, unidad, indicación, flecha de movimiento (path sobre 800×600; sin ella = postura mantenida)]
+// sinFoto: tarjeta de texto (sin ilustraciones); el día cuenta con marcar una sesión.
 const RUTINAS = [
-  { id: 'fuerza', tag: 'Cintilla iliotibial', title: 'Fuerza de cadera',
-    chips: ['3–4 días/semana', '≈ 18 min', 'Banda + esterilla'],
+  { id: 'cadera', tag: 'Cintilla iliotibial', title: 'Fuerza de cadera',
+    chips: ['3 días/semana', '≈ 18 min', 'Banda + esterilla'],
     tip: 'Ejercicio a ejercicio, no en circuito: haz las 3 series y pasa al siguiente · 1 serie = derecha + izquierda · 30&nbsp;s de descanso entre series',
     ex: [
       ['abduccion-lateral', 'Abducción lateral tumbado', '3 × 15', 'por lado', 'Pierna de arriba recta y un poco hacia atrás. Sube 2 s, baja 2 s, sin girar la cadera.', 'M674 170A289 289 0 0 1 727 336'],
       ['pasos-laterales', 'Pasos laterales con banda', '3 × 10 pasos', 'por lado', 'Banda sobre las rodillas, media sentadilla. Rodillas hacia fuera, sin juntar los pies.', 'M270 572H520'],
       ['puente-una-pierna', 'Puente a una pierna', '3 × 10', 'por lado', 'Sube apretando el glúteo, cadera nivelada. Aguanta 2 s arriba.', 'M422 148V242'],
-      ['plancha-lateral', 'Plancha lateral', '3 × 30 s', 'por lado', 'Cuerpo en línea recta, cadera alta. Si cuesta, apoya las rodillas.'],
+      ['plancha-lateral', 'Plancha lateral', '3 × 30 s', 'por lado', 'Cuerpo en línea recta, cadera alta. Si cuesta o molesta la rodilla de abajo, dobla las rodillas y apóyate en ellas.'],
+    ] },
+  { id: 'fuerza', tag: 'Cuerpo entero', title: 'Fuerza general',
+    chips: ['2 días/semana', '≈ 25 min', 'Banda + esterilla'],
+    tip: 'Ejercicio a ejercicio, no en circuito · 45&nbsp;s de descanso entre series · la última repetición cuesta pero sale limpia',
+    ex: [
+      ['flexiones', 'Flexiones', '3 × 8–12', '', 'Cuerpo en tabla, codos a 45° del tronco. Si no salen 8, apoya las rodillas.', 'M300 120V214'],
+      ['remo-banda', 'Remo con banda', '3 × 15', '', 'Banda en los pies, espalda recta. Codos atrás pegados al cuerpo, junta las escápulas 1 s. Hombros lejos de las orejas.', 'M406 262L560 290'],
+      ['sentadilla', 'Sentadilla', '3 × 15', '', 'Cadera atrás, talones en el suelo, rodillas en línea con los pies. Baja hasta donde no moleste la rodilla.', 'M205 200V340'],
+      ['plancha', 'Plancha', '3 × 30 s', '', 'Codos bajo los hombros, abdomen y glúteos apretados. Sin hundir la cadera.'],
+      ['dead-bug', 'Dead bug', '3 × 8', 'por lado', 'Lumbares pegadas al suelo. Baja despacio un brazo y la pierna contraria, sin arquear la espalda.', 'M690 195V290'],
+      ['bird-dog', 'Bird-dog', '3 × 8', 'por lado', 'Estira un brazo y la pierna contraria hasta la horizontal, aguanta 2 s. Cadera quieta, sin girar.', 'M725 270V355'],
+    ] },
+  { id: 'movilidad', tag: 'Cuello y espalda', title: 'Movilidad diaria',
+    chips: ['Todos los días', '≈ 8 min', 'Silla + pared'],
+    tip: 'Lento y sin dolor · los dos primeros valen en la silla del trabajo, cada 1–2 h sentado · levántate 2 min cada hora',
+    ex: [
+      ['retraccion-cuello', 'Retracción de cuello', '10 × 5 s', '', 'Lleva la barbilla atrás, como sacando papada, sin bajar la mirada. Nuca larga.', 'M425 105H510'],
+      ['cuello-lateral', 'Trapecio: cuello lateral', '2 × 30 s', 'por lado', 'Oreja hacia el hombro. La otra mano agarra la silla para que ese hombro no suba. Sin tirar de la cabeza.'],
+      ['gato-vaca', 'Gato-vaca', '10 lentas', '', 'Redondea toda la espalda al soltar el aire y húndela al cogerlo, de la pelvis al cuello.', 'M375 45V112'],
+      ['rotacion-toracica', 'Rotación torácica', '8', 'por lado', 'Mano en la nuca. Baja el codo hacia el brazo de apoyo y ábrelo al techo siguiéndolo con la mirada.', 'M225 45A150 150 0 0 0 140 250'],
+      ['angeles-pared', 'Ángeles en la pared', '2 × 10', '', 'Espalda y cabeza pegadas a la pared. Sube y baja los brazos sin despegar codos ni manos ni subir los hombros.', 'M610 70V175'],
+      ['pectoral-puerta', 'Pectoral en la puerta', '2 × 30 s', '', 'Manos en el marco a la altura de los hombros. Da un paso y deja que el pecho avance.'],
     ] },
   { id: 'estira', tag: 'Corredor', title: 'Estiramientos diarios',
     chips: ['Todos los días', '≈ 12 min', 'Foam roller + esterilla'],
@@ -105,30 +138,40 @@ const RUTINAS = [
       ['estiramiento-cintilla', 'Cintilla de pie', '2 × 30 s', 'por lado', 'Cruza una pierna por detrás, brazo de ese lado arriba e inclínate al lado contrario sacando la cadera.'],
       ['figura-4', 'Glúteo (figura 4)', '2 × 30 s', 'por lado', 'Tobillo sobre la rodilla contraria. Lleva la rodilla hacia el pecho.'],
       ['flexor-cadera', 'Flexor de cadera', '2 × 30 s', 'por lado', 'Aprieta el glúteo de la pierna de atrás y lleva la cadera al frente. Tronco recto.'],
-      ['isquiotibiales', 'Isquiotibiales', '2 × 30 s', 'por lado', 'Sube la pierna recta sujetando el muslo. La otra, pegada al suelo.'],
+      ['isquiotibiales', 'Isquiotibiales', '2 × 30 s', 'por lado', 'Sujeta el muslo y estira la rodilla solo hasta notar un tirón suave; algo doblada vale. La otra pierna, pegada al suelo.'],
       ['perro', 'Gemelos: perro boca abajo', '2 × 30 s', '', 'Cadera arriba, espalda recta. Empuja los talones hacia el suelo.'],
     ] },
+  { id: 'correr', tag: 'Aeróbico', title: 'Correr y nadar', sinFoto: true,
+    chips: ['2 días/semana', 'Llano', 'Nadar opcional'],
+    tip: 'Antes, 5 min andando rápido · pasos cortos y rápidos, sin cuestas abajo · molestia de más de 3 sobre 10 en la cara externa de la rodilla: para y vuelve andando',
+    ex: [
+      ['rodaje', 'Martes · rodaje suave', '5 km', '', 'A un ritmo al que puedas hablar.'],
+      ['tirada-larga', 'Sábado · tirada larga', '5 → 8 km', '', 'Suma 0,5 km cada semana que acabes sin molestia. Si molesta, la siguiente repite la distancia anterior.'],
+      ['nadar', 'Domingo · nadar (opcional)', '20–30 min', '', 'Suave, a crol o espalda. La braza carga la rodilla y el cuello. También puede sustituir a una carrera.'],
+    ] },
+];
+// Lunes → domingo: [día, rutina, texto]
+const PLAN = [
+  ['Lun', 'cadera', 'Cadera'], ['Mar', 'correr', 'Correr 5 km'], ['Mié', 'fuerza', 'Fuerza'], ['Jue', 'cadera', 'Cadera'],
+  ['Vie', 'fuerza', 'Fuerza'], ['Sáb', 'correr', 'Tirada larga'], ['Dom', 'cadera', 'Cadera · nadar opcional'],
 ];
 
 const KEY = 'stretching:v1';
 const dia = d => d.toLocaleDateString('sv');
 const hoy = dia(new Date());
+const lunes = new Date();
+lunes.setDate(lunes.getDate() - (lunes.getDay() + 6) % 7);
+const DIAS = PLAN.map((_, i) => { const d = new Date(lunes); d.setDate(lunes.getDate() + i); return dia(d); });
 let log = {};
 try { log = JSON.parse(localStorage.getItem(KEY)) || {}; } catch {}
 const hechos = d => log[d] || [];
-const completa = (r, d) => r.ex.every(e => hechos(d).includes(e[0]));
+const completa = (r, d) => r.ex[r.sinFoto ? 'some' : 'every'](e => hechos(d).includes(e[0]));
 
-function semana(r) {
-  const lunes = new Date();
-  lunes.setDate(lunes.getDate() - (lunes.getDay() + 6) % 7);
-  return [...'LMXJVSD'].map((l, i) => {
-    const d = new Date(lunes); d.setDate(lunes.getDate() + i);
-    const k = dia(d);
-    return `<b class="${completa(r, k) ? 'ok' : ''} ${k === hoy ? 'hoy' : ''}">${l}</b>`;
-  }).join('');
-}
+const semana = r => DIAS.map((k, i) => `<b class="${completa(r, k) ? 'ok' : ''} ${k === hoy ? 'hoy' : ''}">${'LMXJVSD'[i]}</b>`).join('');
 
 function pinta() {
+  document.getElementById('dias').innerHTML = PLAN.map(([d, id, txt], i) =>
+    `<a href="#${id}" class="${completa(RUTINAS.find(r => r.id === id), DIAS[i]) ? 'ok' : ''} ${DIAS[i] === hoy ? 'hoy' : ''}" style="--c:var(--${id})"><i>${d}</i>${txt}</a>`).join('');
   document.getElementById('fichas').innerHTML = RUTINAS.map(r => `
     <section class="ficha" id="${r.id}" style="--c:var(--${r.id})">
       <header>
@@ -139,7 +182,7 @@ function pinta() {
       <p class="tip">${r.tip}</p>
       ${r.ex.map((e, i) => `
       <button class="ex ${hechos(hoy).includes(e[0]) ? 'done' : ''}" data-id="${e[0]}">
-        <span class="pic"><img src="img/${e[0]}.jpg" alt="${e[1]}" width="800" height="600">${e[5] ? `<svg viewBox="0 0 800 600" aria-hidden="true"><path d="${e[5]}"/></svg>` : ''}</span>
+        ${r.sinFoto ? '' : `<span class="pic"><img src="img/${e[0]}.jpg" alt="${e[1]}" width="800" height="600">${e[5] ? `<svg viewBox="0 0 800 600" aria-hidden="true"><path d="${e[5]}"/></svg>` : ''}</span>`}
         <span>
           <b class="nm"><i>${i + 1}.</i>${e[1]}</b>
           <span class="dose">${e[2]} <small>${e[3]}</small></span>

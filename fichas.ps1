@@ -1,9 +1,9 @@
-# Regenera resumen-fuerza.png y resumen-estira.png desde index.html (Chrome headless).
+# Regenera las fichas resumen-<rutina>.png desde index.html (Chrome headless).
 Add-Type -AssemblyName System.Drawing
 $B = "$env:ProgramFiles\Google\Chrome\Application\chrome.exe"
 $T = "$env:TEMP\stretching"; New-Item -ItemType Directory -Force $T | Out-Null
 $U = 'file:///' + ($PSScriptRoot -replace '\\', '/') + '/index.html'
-foreach ($id in 'fuerza', 'estira') {
+foreach ($id in 'cadera', 'fuerza', 'movilidad', 'estira', 'correr') {
   $raw = "$T\raw-$id.png"
   $p = Start-Process $B -ArgumentList "--headless", "--no-sandbox", "--hide-scrollbars", "--window-size=540,1500", "--force-device-scale-factor=2", "--blink-settings=preferredColorScheme=1", "--screenshot=`"$raw`"", "`"$U`?ficha=$id`"" -PassThru -WindowStyle Hidden
   if (-not $p.WaitForExit(25000)) { $p.Kill() }

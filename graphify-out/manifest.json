@@ -66,15 +66,15 @@
     "semantic_hash": ""
   },
   "PROJECT.md": {
-    "mtime": 1794266587.2490783,
-    "seen": 1794266596.2832026,
-    "ast_hash": "2a89bde0a216a9115174fb211926e9c1",
+    "mtime": 1794270508.168038,
+    "seen": 1794270529.1204383,
+    "ast_hash": "1eb52f182e086f7a6727006f6c8fb4b1",
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1794266588.9207354,
-    "seen": 1794266596.2832026,
-    "ast_hash": "a4fa6a13df8abaed5d84f41484f745f3",
+    "mtime": 1794270511.0203748,
+    "seen": 1794270529.1204383,
+    "ast_hash": "834d18658104cfe139ed01e9fdf05014",
     "semantic_hash": ""
   },
   "START.md": {
@@ -84,9 +84,9 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1794266552.4336925,
-    "seen": 1794266596.2832026,
-    "ast_hash": "0e393f337a9007007baec9e787579a7f",
+    "mtime": 1794270392.8156457,
+    "seen": 1794270529.1204383,
+    "ast_hash": "33b69b1adfd7dd907f8799d9c7187501",
     "semantic_hash": ""
   },
   "img/abduccion-lateral.jpg": {
@@ -150,21 +150,117 @@
     "semantic_hash": ""
   },
   "resumen-estira.png": {
-    "mtime": 1794266567.465489,
-    "seen": 1794266596.2832026,
-    "ast_hash": "006286e5098d3f9530f424e2bd53cc24",
+    "mtime": 1794270410.4666233,
+    "seen": 1794270529.1204383,
+    "ast_hash": "4f0d3c6ff8e845699d9def2ca10385ea",
     "semantic_hash": ""
   },
   "resumen-fuerza.png": {
-    "mtime": 1794266566.1821554,
-    "seen": 1794266596.2832026,
-    "ast_hash": "fdf067e1ac85a451321b208851c9023e",
+    "mtime": 1794270407.8832667,
+    "seen": 1794270529.1204383,
+    "ast_hash": "2fc83569e4f9c4eaee5b9a54255b279d",
     "semantic_hash": ""
   },
   "fichas.ps1": {
-    "mtime": 1794266557.9664328,
-    "seen": 1794266596.2832026,
-    "ast_hash": "5a0449879a7a4d26b50c10e0992eff2e",
+    "mtime": 1794270395.3835275,
+    "seen": 1794270529.1204383,
+    "ast_hash": "a341e0da804486d2ea175604fe8ac455",
+    "semantic_hash": ""
+  },
+  "docs/DECISIONES.md": {
+    "mtime": 1794270512.8755677,
+    "seen": 1794270529.1204383,
+    "ast_hash": "ff04eadd48712652fa1a71ed52b63d56",
+    "semantic_hash": ""
+  },
+  "img/angeles-pared.jpg": {
+    "mtime": 1794270333.8213155,
+    "seen": 1794270529.1204383,
+    "ast_hash": "1785cee9f2e912cf1e048d17ab4d2531",
+    "semantic_hash": ""
+  },
+  "img/bird-dog.jpg": {
+    "mtime": 1794270333.7083514,
+    "seen": 1794270529.1204383,
+    "ast_hash": "2b8da19ea850c417e5ce28a932d1c5f2",
+    "semantic_hash": ""
+  },
+  "img/cuello-lateral.jpg": {
+    "mtime": 1794270333.752693,
+    "seen": 1794270529.1204383,
+    "ast_hash": "3c864a19869adc207337a42936aaa017",
+    "semantic_hash": ""
+  },
+  "img/dead-bug.jpg": {
+    "mtime": 1794270333.6874676,
+    "seen": 1794270529.1204383,
+    "ast_hash": "75c2cec284cffe0766b3039f89db5b57",
+    "semantic_hash": ""
+  },
+  "img/flexiones.jpg": {
+    "mtime": 1794270333.5994399,
+    "seen": 1794270529.1204383,
+    "ast_hash": "f063fbd2a15f1bdae73816a804a4f717",
+    "semantic_hash": ""
+  },
+  "img/gato-vaca.jpg": {
+    "mtime": 1794270333.7750463,
+    "seen": 1794270529.1204383,
+    "ast_hash": "32fb4a4b43731f249648d9ededa2ca76",
+    "semantic_hash": ""
+  },
+  "img/pectoral-puerta.jpg": {
+    "mtime": 1794270333.8374567,
+    "seen": 1794270529.1204383,
+    "ast_hash": "ae8f9db37c90845a9ea4dee6beebd7ec",
+    "semantic_hash": ""
+  },
+  "img/plancha.jpg": {
+    "mtime": 1794270333.6651888,
+    "seen": 1794270529.1204383,
+    "ast_hash": "4352c255ac592ba11185d48e0e689d34",
+    "semantic_hash": ""
+  },
+  "img/remo-banda.jpg": {
+    "mtime": 1794270333.6247296,
+    "seen": 1794270529.1204383,
+    "ast_hash": "e7dc028cc300d13fef45686aab9a9e71",
+    "semantic_hash": ""
+  },
+  "img/retraccion-cuello.jpg": {
+    "mtime": 1794270333.729109,
+    "seen": 1794270529.1204383,
+    "ast_hash": "a7e38f9b047da4c2084e571fbc4f5c75",
+    "semantic_hash": ""
+  },
+  "img/rotacion-toracica.jpg": {
+    "mtime": 1794270333.7993314,
+    "seen": 1794270529.1204383,
+    "ast_hash": "736bbd56f306b9d2e8e92672f8b4cfef",
+    "semantic_hash": ""
+  },
+  "img/sentadilla.jpg": {
+    "mtime": 1794270333.6452994,
+    "seen": 1794270529.1204383,
+    "ast_hash": "29e05b7c252b1c1ad2598b8e3c8057a4",
+    "semantic_hash": ""
+  },
+  "resumen-cadera.png": {
+    "mtime": 1794270406.499876,
+    "seen": 1794270529.1204383,
+    "ast_hash": "cc035207456f2cc2289cb0b4af89a0ed",
+    "semantic_hash": ""
+  },
+  "resumen-correr.png": {
+    "mtime": 1794270412.8086348,
+    "seen": 1794270529.1204383,
+    "ast_hash": "de828daa427b93d0eb6b6ccf4a629dc9",
+    "semantic_hash": ""
+  },
+  "resumen-movilidad.png": {
+    "mtime": 1794270409.1652067,
+    "seen": 1794270529.1204383,
+    "ast_hash": "2cb0429673e7a8d1ca6247bc147635bb",
     "semantic_hash": ""
   }
 }
